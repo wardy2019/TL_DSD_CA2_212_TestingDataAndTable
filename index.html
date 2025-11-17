@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Arbor Shrewsbury Test Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-content">
+      <h1>🧪 Shropshire Arbor Services Test Lab</h1>
+      <p>Master test data and test plans for T Level Digital Software Development</p>
+      <div class="player-stats">
+        <div class="stat-item">
+          <span class="stat-label">XP</span>
+          <span id="total-xp" class="stat-value">0</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Level</span>
+          <span id="player-level" class="stat-value">1</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-label">Streak</span>
+          <span id="streak-count" class="stat-value">0</span>
+        </div>
+      </div>
+    </div>
+    <div class="xp-bar">
+      <div id="xp-fill" class="xp-fill"></div>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <section class="scenario card">
+      <h2>🎯 Mission Brief</h2>
+      <div class="mission-content">
+        <p>
+          <strong>Welcome, Junior Test Engineer!</strong> Shropshire Arbor Services provides <strong>tree surgery and maintenance</strong> across the region.
+          Before work begins, the company must gather customer details, check compliance, and assess each job for safety. You've been recruited as a <strong>software tester</strong> to ensure their new system works perfectly!
+        </p>
+        <div class="system-rules">
+          <h3>📋 System Validation Rules</h3>
+          <ul>
+            <li><strong>Customer ID:</strong> Must be exactly 6 digits (e.g., 123456)</li>
+            <li><strong>Tree Height:</strong> Must be between 1 and 50 metres (inclusive)</li>
+            <li><strong>Jobs per Month:</strong> Must be between 0 and 20 (inclusive)</li>
+          </ul>
+        </div>
+        <div class="mission-objective">
+          <h3>🏆 Your Mission</h3>
+          <p>Complete all three levels to become a <strong>Certified Test Engineer</strong>. Master test data types, build comprehensive test sets, and create professional test plans!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievement Panel -->
+    <section class="achievements-panel card">
+      <h2>🏅 Achievements</h2>
+      <div id="achievements-grid" class="achievements-grid">
+        <!-- Achievements will be populated by JavaScript -->
+      </div>
+    </section>
+
+    <section class="levels">
+      <!-- Level 1 -->
+      <article class="card level" id="level1">
+        <div class="level-header">
+          <h2>🎮 Level 1: Test Data Detective</h2>
+          <div class="level-badge">Beginner</div>
+        </div>
+        <p>
+          <strong>Challenge:</strong> Identify the correct test data type for each scenario.
+          Choose from: <strong>valid</strong>, <strong>invalid</strong>, <strong>boundary</strong> or <strong>erroneous</strong>.
+        </p>
+        <div class="level-rewards">
+          <span class="reward-item">🎯 +10 XP per correct answer</span>
+          <span class="reward-item">⚡ +5 XP streak bonus</span>
+        </div>
+        <div class="question-box" aria-live="polite">
+          <p id="l1-field">Field:</p>
+          <p id="l1-rule" class="rule-text"></p>
+          <p id="l1-data" class="test-value"></p>
+        </div>
+        <div class="button-row">
+          <button class="type-btn" data-type="valid">Valid</button>
+          <button class="type-btn" data-type="invalid">Invalid</button>
+          <button class="type-btn" data-type="boundary">Boundary</button>
+          <button class="type-btn" data-type="erroneous">Erroneous</button>
+        </div>
+        <div id="l1-feedback" class="feedback-container">
+          <p class="feedback"></p>
+          <div class="xp-gain" id="l1-xp-gain"></div>
+        </div>
+        <div class="progress-container">
+          <p id="l1-progress" class="progress-text"></p>
+          <div class="score-bar">
+            <div id="l1-score-fill"></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Level 2 -->
+      <article class="card level" id="level2">
+        <div class="level-header">
+          <h2>🛠️ Level 2: Test Set Architect</h2>
+          <div class="level-badge">Intermediate</div>
+        </div>
+        <p>
+          <strong>Challenge:</strong> Design a comprehensive test set for <strong>jobs per month</strong>.
+          Rule: <strong>must be a whole number from 0 to 20 inclusive</strong>.
+        </p>
+        <div class="level-rewards">
+          <span class="reward-item">🎯 +25 XP for complete coverage</span>
+          <span class="reward-item">💎 +50 XP bonus for perfect accuracy</span>
+        </div>
+        <p>
+          <strong>Strategy:</strong> Enter up to four test values and classify each type.
+          Aim to include at least one of each category for maximum points!
+        </p>
+
+        <table class="test-table" aria-label="Create test data">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Test value</th>
+              <th>Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><input type="text" class="l2-value"></td>
+              <td>
+                <select class="l2-type">
+                  <option value="">Select type</option>
+                  <option value="valid">Valid</option>
+                  <option value="invalid">Invalid</option>
+                  <option value="boundary">Boundary</option>
+                  <option value="erroneous">Erroneous</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><input type="text" class="l2-value"></td>
+              <td>
+                <select class="l2-type">
+                  <option value="">Select type</option>
+                  <option value="valid">Valid</option>
+                  <option value="invalid">Invalid</option>
+                  <option value="boundary">Boundary</option>
+                  <option value="erroneous">Erroneous</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><input type="text" class="l2-value"></td>
+              <td>
+                <select class="l2-type">
+                  <option value="">Select type</option>
+                  <option value="valid">Valid</option>
+                  <option value="invalid">Invalid</option>
+                  <option value="boundary">Boundary</option>
+                  <option value="erroneous">Erroneous</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td><input type="text" class="l2-value"></td>
+              <td>
+                <select class="l2-type">
+                  <option value="">Select type</option>
+                  <option value="valid">Valid</option>
+                  <option value="invalid">Invalid</option>
+                  <option value="boundary">Boundary</option>
+                  <option value="erroneous">Erroneous</option>
+                </select>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <button id="l2-check">Check my test set</button>
+        <p id="l2-feedback" class="feedback"></p>
+        <ul id="l2-checklist" class="checklist"></ul>
+      </article>
+
+      <!-- Level 3 -->
+      <article class="card level" id="level3">
+        <div class="level-header">
+          <h2>📋 Level 3: Test Plan Master</h2>
+          <div class="level-badge">Advanced</div>
+        </div>
+        <p>
+          <strong>Final Challenge:</strong> Create a professional test plan entry.
+          Transform one of your test cases into industry-standard documentation.
+        </p>
+        <div class="level-rewards">
+          <span class="reward-item">🎯 +75 XP for completion</span>
+          <span class="reward-item">👑 Unlock "Test Engineer" title</span>
+        </div>
+
+        <form id="l3-form">
+          <div class="form-row">
+            <label for="test-id">Test ID</label>
+            <input type="text" id="test-id" value="TC-JOBS-01">
+          </div>
+          <div class="form-row">
+            <label for="test-purpose">Purpose of the test</label>
+            <textarea id="test-purpose" rows="2"
+              placeholder="For example: to check that the system accepts the maximum number of jobs per month (20)."></textarea>
+          </div>
+          <div class="form-row">
+            <label for="test-data">Test data to be used</label>
+            <textarea id="test-data" rows="2"
+              placeholder="For example: jobs_per_month = 20"></textarea>
+          </div>
+          <div class="form-row">
+            <label for="expected-result">Expected result</label>
+            <textarea id="expected-result" rows="2"
+              placeholder="For example: job booking is accepted and a confirmation message is shown."></textarea>
+          </div>
+          <div class="form-row">
+            <label for="actual-result">Actual result</label>
+            <textarea id="actual-result" rows="2"
+              placeholder="For example: not run yet, or describe what actually happened."></textarea>
+          </div>
+        </form>
+
+        <button id="l3-check">Check completeness</button>
+        <p id="l3-feedback" class="feedback"></p>
+
+        <div class="score-summary">
+          <h3>🏆 Final Assessment</h3>
+          <div class="rating-display">
+            <p id="overall-rating">Complete all levels to earn your certification!</p>
+            <div id="certification-badge" class="certification-badge hidden">
+              <div class="badge-icon">🎓</div>
+              <div class="badge-text">
+                <div class="badge-title">Certified Test Engineer</div>
+                <div class="badge-subtitle">T-Level Digital Software Development</div>
+              </div>
+            </div>
+          </div>
+          <button id="show-python-hint" class="hint-button">🐍 Show Python Implementation</button>
+          <pre id="python-hint" class="code-block" aria-label="Python validation example"></pre>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>Designed for 2.12.4 Test data and test plan (T Level Digital Software Development)</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
