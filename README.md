@@ -137,5 +137,3 @@ If you encounter any issues or have questions:
 - Ensure JavaScript is enabled in your browser
 
 ---
-
-**Made with ❤️ for T Level Digital Software Development students**
